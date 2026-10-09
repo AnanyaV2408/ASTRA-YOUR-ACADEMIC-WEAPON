@@ -112,7 +112,14 @@ Now answer the user's question.
 
                 last_error = error
 
-                # Wait briefly before retrying
+                print(
+                    f"ASTRA Gemini error | "
+                    f"Model: {model_name} | "
+                    f"Type: {type(error).__name__} | "
+                    f"Details: {error}",
+                    flush=True
+                )
+
                 if attempt == 0:
                     time.sleep(2)
 
